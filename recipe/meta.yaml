@@ -10,13 +10,14 @@ source:
   sha256: 38247a5a3d49ea7add8a429d51d5229ab6559343af8ff77fc45fce26891391d3
 
 build:
-  number: 1
+  number: 0 
   entry_points:
     - pyvisa-info = pyvisa.cmd_line_tools:visa_info
     - pyvisa-shell = pyvisa.cmd_line_tools:visa_shell
   script:
     - "{{ PYTHON }} setup.py bdist_wheel --dist-dir=dist"
     - "{{ PYTHON }} -m pip install --find-links=dist --no-deps --ignore-installed --no-cache-dir -vvv {{ name }}"
+    #- "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [py<36]
 
 requirements:
