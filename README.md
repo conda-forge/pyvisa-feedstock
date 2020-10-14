@@ -5,9 +5,13 @@ Home: https://github.com/hgrecco/pyvisa
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyvisa-feedstock/blob/master/LICENSE.txt)
 
 Summary: Control your instruments with Python.
+
+Development: https://github.com/hgrecco/pyvisa
+
+Documentation: https://pyvisa.readthedocs.io/
 
 PyVISA is a Python package that enables you to control all kinds of measurement devices
 independently of the interface (e.g. GPIB, RS232, USB, Ethernet). As an example, reading
