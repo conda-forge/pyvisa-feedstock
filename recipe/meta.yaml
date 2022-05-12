@@ -1,6 +1,6 @@
 {% set name = "PyVISA" %}
-{% set version = "1.11.3" %}
-{% set sha256 = "fb4b601d49fce1a00926fcdde5548bd54f0511f549188a3e0c1e4628c3d86703" %}
+{% set version = "1.12.0" %}
+{% set sha256 = "73a38e6bf7431449bd3e1c7bf51a995f62fcae68df580c01c30628629c6b5cbf" %}
 
 package:
   name: pyvisa
@@ -12,10 +12,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
+  number: 0
   script:
-    - "{{ PYTHON }} setup.py bdist_wheel --dist-dir=dist"
-    - "{{ PYTHON }} -m pip install --find-links=dist --no-deps --ignore-installed --no-cache-dir -vvv {{ name }}"
+    - {{ PYTHON }} setup.py bdist_wheel --dist-dir=dist
+    - {{ PYTHON }} -m pip install --find-links=dist --no-deps --ignore-installed --no-cache-dir -vvv {{ name }}
   entry_points:
     - pyvisa-info = pyvisa.cmd_line_tools:visa_info
     - pyvisa-shell = pyvisa.cmd_line_tools:visa_shell
@@ -37,7 +37,6 @@ test:
     - pyvisa-info
     - pyvisa-shell -h
   imports:
-    - visa
     - pyvisa
 
 about:
