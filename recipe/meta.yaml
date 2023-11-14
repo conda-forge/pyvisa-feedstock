@@ -1,6 +1,6 @@
 {% set name = "PyVISA" %}
-{% set version = "1.13.0" %}
-{% set sha256 = "89fa008b58465c928655459508513c51e942ca7bf3e2a727da869366e0c8f9c6" %}
+{% set version = "1.14.0" %}
+{% set sha256 = "c8cf86d71182bdbdf9bc8c190f0da2a1d48979a34ddfdacee9e00e2dea4bb4d5" %}
 
 package:
   name: pyvisa
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script:
     - {{ PYTHON }} setup.py bdist_wheel --dist-dir=dist
     - {{ PYTHON }} -m pip install --find-links=dist --no-deps --ignore-installed --no-cache-dir -vvv {{ name }}
