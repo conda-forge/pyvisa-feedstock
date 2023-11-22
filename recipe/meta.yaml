@@ -1,6 +1,6 @@
 {% set name = "PyVISA" %}
-{% set version = "1.14.0" %}
-{% set sha256 = "c8cf86d71182bdbdf9bc8c190f0da2a1d48979a34ddfdacee9e00e2dea4bb4d5" %}
+{% set version = "1.14.1" %}
+{% set sha256 = "71030041ed4c5dad77687454cf44b8be4d1642e9d1aaa22019248d41d8ed7a79" %}
 
 package:
   name: pyvisa
