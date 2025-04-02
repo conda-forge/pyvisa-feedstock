@@ -1,6 +1,6 @@
 {% set name = "PyVISA" %}
-{% set version = "1.14.1" %}
-{% set sha256 = "71030041ed4c5dad77687454cf44b8be4d1642e9d1aaa22019248d41d8ed7a79" %}
+{% set version = "1.15.0" %}
+{% set sha256 = "cec3cb91703a2849f6faa42b1ecd7689a0175baabff8ca33fce9f45934ce45e6" %}
 
 package:
   name: pyvisa
@@ -8,12 +8,12 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} setup.py bdist_wheel --dist-dir=dist
     - {{ PYTHON }} -m pip install --find-links=dist --no-deps --ignore-installed --no-cache-dir -vvv {{ name }}
