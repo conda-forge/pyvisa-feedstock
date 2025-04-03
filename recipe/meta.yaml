@@ -15,8 +15,7 @@ build:
   noarch: python
   number: 0
   script:
-    - {{ PYTHON }} setup.py bdist_wheel --dist-dir=dist
-    - {{ PYTHON }} -m pip install --find-links=dist --no-deps --ignore-installed --no-cache-dir -vvv {{ name }}
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir --no-build-isolation -vvv
   entry_points:
     - pyvisa-info = pyvisa.cmd_line_tools:visa_info
     - pyvisa-shell = pyvisa.cmd_line_tools:visa_shell
